@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import data from '../src/data/data.js'
-import ii from '../src/el61.png'
-import './style/App.scss'
+import data from '../src/data/data'
+import { Card } from './components/Card/Card'
+import Country from './components/Сountry/Сountry'
 import { Header } from './shader/Header/Header'
+import './style/App.scss'
 
-interface PageData {
+export interface PageData {
 	id: string
 	setting: string
 	color: string
@@ -17,8 +18,8 @@ function App() {
 	const [currentPage, setCurrentPage] = useState<PageData | null>(null)
 
 	const handleDomoiClick = () => {
-		setCurrentPage(null);
-	  };
+		setCurrentPage(null)
+	}
 
 	useEffect(() => {
 		const initialPage = data.find(item => item.id === 'home')
@@ -30,39 +31,13 @@ function App() {
 			return (
 				<ul className='main'>
 					{data.map(item => (
-						<li
-							key={item.id}
-							onClick={() =>
-								setCurrentPage(data.find(page => page.id === item.id) || null)
-							}
-						>
-							<div className='main-card'>
-								<div className={`card ${item.id}`} id={`${item.id}`}>
-									<div className={`img ${item.setting}`}>
-										{/* <img src={`/img/${item.id}.png`} alt='' /> */}
-										<img src={ii} alt='' />
-									</div>
-									<div className='blob-btn'>
-										<p className='p'>{item.p1}</p>
-										<p className='p'>|</p>
-										<p className='p'>{item.p2}</p>
-									</div>
-								</div>
-							</div>
-						</li>
+						<Card key={item.id} item={item} setCurrentPage={setCurrentPage} />
 					))}
 				</ul>
 			)
 		}
 
-		return (
-			<div>
-				<h1 style={{ color: currentPage.colorText }}>{currentPage.p2}</h1>
-				<p>{currentPage.p1}</p>
-				<button onClick={() => setCurrentPage(null)}>Назад до списку</button>
-				<img src='../src/img/data100li2img1.png' alt='' />
-			</div>
-		)
+		return <Country countryId={currentPage.p1} />
 	}
 
 	return (
