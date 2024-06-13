@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/unesco/static/css/main.96adba02.css",
-    "main.js": "/unesco/static/js/main.1172fa96.js",
+    "main.css": "/unesco/static/css/main.f8a3bbeb.css",
+    "main.js": "/unesco/static/js/main.822a86dd.js",
     "index.html": "/unesco/index.html",
-    "main.96adba02.css.map": "/unesco/static/css/main.96adba02.css.map",
-    "main.1172fa96.js.map": "/unesco/static/js/main.1172fa96.js.map"
+    "main.f8a3bbeb.css.map": "/unesco/static/css/main.f8a3bbeb.css.map",
+    "main.822a86dd.js.map": "/unesco/static/js/main.822a86dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.96adba02.css",
-    "static/js/main.1172fa96.js"
+    "static/css/main.f8a3bbeb.css",
+    "static/js/main.822a86dd.js"
   ]
 }
