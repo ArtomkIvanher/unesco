@@ -12,6 +12,7 @@ export interface PageData {
 	colorText: string
 	p1: string
 	p2: string
+	site: string
 }
 
 function App() {
@@ -42,7 +43,12 @@ function App() {
 
 	return (
 		<>
-			<Header onDomoiClick={handleDomoiClick} />
+			<Header
+				countryName={currentPage?.p2}
+				countryFlag={currentPage?.id}
+				countrySite={currentPage?.site}
+				onDomoiClick={handleDomoiClick}
+			/>
 			{renderPage()}
 		</>
 	)
