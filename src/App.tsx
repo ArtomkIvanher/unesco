@@ -27,6 +27,11 @@ function App() {
 		setCurrentPage(initialPage || null)
 	}, [])
 
+	const handleRandomCountryClick = () => {
+		const randomIndex = Math.floor(Math.random() * data.length);
+		setCurrentPage(data[randomIndex]);
+	  };
+
 	const renderPage = () => {
 		if (!currentPage) {
 			return (
@@ -48,6 +53,7 @@ function App() {
 				countryFlag={currentPage?.id}
 				countrySite={currentPage?.site}
 				onDomoiClick={handleDomoiClick}
+				onRandomCountryClick={handleRandomCountryClick} // Додаємо новий проп
 			/>
 			{renderPage()}
 		</>
