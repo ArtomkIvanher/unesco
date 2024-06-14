@@ -10,7 +10,7 @@ interface CardProps {
 export const Card: React.FC<CardProps> = ({ item, setCurrentPage }) => (
   <li key={item.id} onClick={() => setCurrentPage(item)}>
     <div className={s.main_card}>
-      <div className={`card ${item.id}`} id={`${item.id}`}>
+      <div className={`card ${item.id}`}>
         <div className={`img ${item.setting}`}>
           <img src={`/unesco/img/${item.id}.png`} alt='' />
         </div>

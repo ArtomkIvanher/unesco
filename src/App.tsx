@@ -18,10 +18,10 @@ export interface PageData {
 export interface CountryData {
 	id: number
 	year1?: string
-	h1?: string
+	title1?: string
 	text1?: string
 	year2?: string
-	h2?: string
+	title2?: string
 	text2?: string
 	img: string
 }
