@@ -8,12 +8,12 @@ interface Props {
   onRandomCountryClick?: () => void;
 }
 
-export const Header: React.FC<Props> = ({ 
-  onDomoiClick, 
-  countryName, 
-  countryFlag, 
+export const Header: React.FC<Props> = ({
+  onDomoiClick,
+  countryName,
+  countryFlag,
   countrySite,
-  onRandomCountryClick, 
+  onRandomCountryClick,
 }) => {
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -23,19 +23,14 @@ export const Header: React.FC<Props> = ({
     <header>
       <div className={s.header_div}>
         <div className={s.home} onClick={handleScrollToTop}>
-          <button className={s.btn_linia} onClick={onDomoiClick}> 
-            domoi
-          </button>
-          <button 
-            className={`${s.btn_linia} ${s.romdome}`} 
-            onClick={onRandomCountryClick}
-          >
+          <button className={s.btn_linia} onClick={onDomoiClick}>domoi</button>
+          <button className={`${s.btn_linia} ${s.romdome}`} onClick={onRandomCountryClick}>
             romdom
-          </button> 
+          </button>
         </div>
         <div className={s.kraina_img}>
-          {countryFlag && <img src={`/unesco/img/${countryFlag}.png`} alt='' />}
-          <div className={s.active}></div>
+          {countryFlag && <img src={`/unesco/img/${countryFlag}.png`} alt="" />}
+          <div className={s.active} />
           {countrySite && (
             <div className={s.anim_p}>
               <a className={s.btn_linia} href={countrySite}>
