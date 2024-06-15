@@ -4,6 +4,7 @@ import { Card } from './components/Card/Card'
 import Country from './components/Сountry/Сountry'
 import { Header } from './shader/Header/Header'
 import './style/App.scss'
+import useTheme from './hooks/useTheme'
 
 export interface PageData {
 	id: string
@@ -26,7 +27,7 @@ export interface CountryData {
 	img: string
 }
 
-function App() {
+export default function App() {
 	const [currentPage, setCurrentPage] = useState<PageData | null>(null)
 
 	useEffect(() => {
@@ -66,5 +67,3 @@ function App() {
 		</>
 	)
 }
-
-export default App

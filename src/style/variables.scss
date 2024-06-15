@@ -1,0 +1,9 @@
+html[data-theme='dark'] {
+  --button-text-color: #ffffff;
+  --background-color: #292929;
+}
+
+html[data-theme='light'] {
+  --button-text-color: #252525;
+  --background-color: #dfdfdf;
+}

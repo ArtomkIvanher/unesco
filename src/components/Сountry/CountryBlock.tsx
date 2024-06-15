@@ -25,7 +25,7 @@ export default function CountryBlock({
 			)}
 			<div className={s.layout}>
 				<div className={s.text_info}>
-					{title && <h2 className='anim_items'>{title}</h2>}
+					{title && <h2 className='с'>{title}</h2>}
 					{text && <p className='anim_items'>{text}</p>}
 				</div>
 				{img && (

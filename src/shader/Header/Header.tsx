@@ -1,4 +1,5 @@
 import s from './Header.module.scss';
+import useTheme from '../../hooks/useTheme';
 
 interface Props {
   onDomoiClick?: () => void;
@@ -18,12 +19,15 @@ export const Header: React.FC<Props> = ({
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header>
       <div className={s.home} onClick={handleScrollToTop}>
         <button className={s.btn_linia} onClick={onDomoiClick}>domoi</button>
-        <button className={s.btn_linia} onClick={onRandomCountryClick}>romdom</button>
+        <button className={s.btn_linia} onClick={onRandomCountryClick}
+        >romdom</button>
+        <button onClick={() => toggleTheme()}>Тема</button> 
       </div>
       <div className={s.counter_flag}>
         {countryFlag && <img src={`/unesco/img/${countryFlag}.png`} alt="" />}
