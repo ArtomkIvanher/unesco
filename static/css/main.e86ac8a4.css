@@ -1,0 +1,2 @@
+html[data-theme=dark]{--button-text-color:#fff;--button-background-color:#4e005c;--button-border-color:#ba8fc2;--background-color:#292929;--icon-color:#ba8fc2}html[data-theme=light]{--button-text-color:#252525;--button-background-color:#f9d4ff;--button-border-color:#4e005c;--background-color:#dfdfdf;--icon-color:#4e005c}html{background-color:var(--background-color);max-width:100%;width:100%}body,html{overflow-x:hidden}body{font-family:Arial,Helvetica,sans-serif;padding-top:90px}.hide{display:none}
+/*# sourceMappingURL=main.e86ac8a4.css.map*/
