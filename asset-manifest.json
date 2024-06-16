@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/unesco/static/css/main.e86ac8a4.css",
-    "main.js": "/unesco/static/js/main.da0498dc.js",
+    "main.css": "/unesco/static/css/main.393b979f.css",
+    "main.js": "/unesco/static/js/main.28e71c56.js",
     "static/js/996.b0531afe.chunk.js": "/unesco/static/js/996.b0531afe.chunk.js",
     "static/js/9.ab8987a4.chunk.js": "/unesco/static/js/9.ab8987a4.chunk.js",
     "static/js/587.c5b42232.chunk.js": "/unesco/static/js/587.c5b42232.chunk.js",
@@ -10,11 +10,11 @@
     "static/js/589.02cabe4f.chunk.js": "/unesco/static/js/589.02cabe4f.chunk.js",
     "static/js/663.ec36e74f.chunk.js": "/unesco/static/js/663.ec36e74f.chunk.js",
     "index.html": "/unesco/index.html",
-    "main.e86ac8a4.css.map": "/unesco/static/css/main.e86ac8a4.css.map",
-    "main.da0498dc.js.map": "/unesco/static/js/main.da0498dc.js.map"
+    "main.393b979f.css.map": "/unesco/static/css/main.393b979f.css.map",
+    "main.28e71c56.js.map": "/unesco/static/js/main.28e71c56.js.map"
   },
   "entrypoints": [
-    "static/css/main.e86ac8a4.css",
-    "static/js/main.da0498dc.js"
+    "static/css/main.393b979f.css",
+    "static/js/main.28e71c56.js"
   ]
 }

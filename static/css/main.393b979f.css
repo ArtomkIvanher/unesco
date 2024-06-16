@@ -1,0 +1,2 @@
+html[data-theme=dark]{--button-text-color:#fff;--background-color:#292929}html[data-theme=light]{--button-text-color:#252525;--background-color:#dfdfdf}html{background-color:var(--background-color);color:var(--button-text-color);max-width:100%;width:100%}body,html{overflow-x:hidden}body{font-family:Arial,Helvetica,sans-serif;padding-top:90px}.hide{display:none}
+/*# sourceMappingURL=main.393b979f.css.map*/
