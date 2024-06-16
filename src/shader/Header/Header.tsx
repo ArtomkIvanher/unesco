@@ -1,4 +1,3 @@
-import useScrollToTop from '../../hooks/useScrollTop'
 import useTheme from '../../hooks/useTheme'
 import s from './Header.module.scss'
 
@@ -18,7 +17,6 @@ export const Header: React.FC<Props> = ({
 	onRandomCountryClick,
 }) => {
 	const { theme, toggleTheme } = useTheme()
-	useScrollToTop('scrollTopButton')
 
 	return (
 		<header>

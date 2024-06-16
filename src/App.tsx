@@ -30,6 +30,7 @@ export interface CountryData {
 export default function App() {
 	const [currentPage, setCurrentPage] = useState<PageData | null>(null)
 	const [previousPageIndex, setPreviousPageIndex] = useState<number | null>(null);
+	useScrollToTop('scrollTopButton');
 
 	useEffect(() => {
 		const initialPage = data.find(item => item.id === 'home')
@@ -70,6 +71,7 @@ export default function App() {
 				onRandomCountryClick={handleRandomCountryClick}
 			/>
 			{renderPage()}
+			<button className='scrollTopButton'>top</button>
 		</>
 	)
 }

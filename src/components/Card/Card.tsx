@@ -1,7 +1,6 @@
 import React from 'react'
 import { PageData } from '../../App'
 import s from './Card.module.scss'
-import useScrollToTop from '../../hooks/useScrollTop'
 
 interface CardProps {
 	item: PageData
@@ -9,7 +8,6 @@ interface CardProps {
 }
 
 export const Card: React.FC<CardProps> = ({ item, setCurrentPage }) => {
-  useScrollToTop('scrollTopButton');
 
   return (
     <li
