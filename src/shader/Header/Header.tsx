@@ -20,7 +20,7 @@ export const Header: React.FC<Props> = ({
 
 	return (
 		<header>
-			<div className={s.home}>
+			<div className={s.btn}>
 				<button
 					className={`scrollTopButton ${s.btn_linia}`}
 					onClick={onHomeClick}
@@ -36,12 +36,12 @@ export const Header: React.FC<Props> = ({
 				<button onClick={() => toggleTheme()}>Тема</button>
 			</div>
 			<div className={s.counter_flag}>
-				{countryFlag && <img src={`/unesco/img/${countryFlag}.png`} alt='' />}
 				<div className={`${s.active} ${s.counter_flag__div}`} />
+				{countryFlag && <img src={`/unesco/img/${countryFlag}.png`} alt='' />}
 				{countrySite && (
-					<a className={s.btn_linia} href={countrySite}>
-						{countryName}
-					</a>
+					<button className={s.btn_linia}>
+						<a href={countrySite}>{countryName}</a>
+					</button>
 				)}
 			</div>
 		</header>

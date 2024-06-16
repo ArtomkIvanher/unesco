@@ -15,7 +15,7 @@ export const Card: React.FC<CardProps> = ({ item, setCurrentPage }) => {
 		key={item.id}
 		onClick={() => setCurrentPage(item)}
 	>
-		<div className={`img ${item.setting}`}>
+		<div className={`${s.img} ${item.setting}`}>
 			<img src={`/unesco/img/${item.id}.png`} alt='' />
 		</div>
 		<div className={s.card_btn}>
