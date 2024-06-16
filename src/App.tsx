@@ -29,6 +29,7 @@ export interface CountryData {
 
 export default function App() {
 	const [currentPage, setCurrentPage] = useState<PageData | null>(null)
+	const [previousPageIndex, setPreviousPageIndex] = useState<number | null>(null);
 
 	useEffect(() => {
 		const initialPage = data.find(item => item.id === 'home')
@@ -36,9 +37,14 @@ export default function App() {
 	}, [])
 
 	const handleRandomCountryClick = () => {
-		const randomIndex = Math.floor(Math.random() * data.length)
-		setCurrentPage(data[randomIndex])
-	}
+		let randomIndex: number;
+		do {
+		  randomIndex = Math.floor(Math.random() * data.length);
+		} while (randomIndex === previousPageIndex);
+	
+		setPreviousPageIndex(randomIndex);
+		setCurrentPage(data[randomIndex]);
+	  };
 
 	const renderPage = () => {
 		if (!currentPage) {
