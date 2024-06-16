@@ -4,7 +4,7 @@ import { Card } from './components/Card/Card'
 import Country from './components/Сountry/Сountry'
 import { Header } from './shader/Header/Header'
 import './style/App.scss'
-import useTheme from './hooks/useTheme'
+import useScrollToTop from './hooks/useScrollTop'
 
 export interface PageData {
 	id: string
@@ -60,7 +60,7 @@ export default function App() {
 				countryName={currentPage?.p2}
 				countryFlag={currentPage?.id}
 				countrySite={currentPage?.site}
-				onDomoiClick={() => setCurrentPage(null)}
+				onHomeClick={() => setCurrentPage(null)}
 				onRandomCountryClick={handleRandomCountryClick}
 			/>
 			{renderPage()}
