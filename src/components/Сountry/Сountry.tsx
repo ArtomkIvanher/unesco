@@ -22,7 +22,7 @@ export default function Country({ countryId }: CountryProps) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await import(`../../data/${countryId}.json`);
+        const data = await import(`../../data/country/${countryId}.json`);
         setCountryData(data.default);
       } catch (error) {
         console.error(`Помилка завантаження даних для країни ${countryId}:`, error);

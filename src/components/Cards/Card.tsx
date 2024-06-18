@@ -2,7 +2,7 @@ import React from 'react'
 import { PageData } from '../../App'
 import s from './Card.module.scss'
 
-interface CardProps {
+export interface CardProps {
 	item: PageData
 	setCurrentPage: (page: PageData | null) => void
 }

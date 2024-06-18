@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState} from 'react'; // Corrected import
 import data from '../src/data/data'
-import { Card } from './components/Card/Card'
+import Cards from './components/Cards/Cards'
 import Country from './components/Сountry/Сountry'
 import { Header } from './shader/Header/Header'
 import './style/App.scss'
@@ -31,6 +31,9 @@ export default function App() {
 	const [currentPage, setCurrentPage] = useState<PageData | null>(null)
 	const [previousPageIndex, setPreviousPageIndex] = useState<number | null>(null);
 	useScrollToTop('scrollTopButton');
+	
+	const cardsPerPage = 3; // Кількість карток на сторінці
+    const repetitions = 10; // Кількість повторень кожної групи карток
 
 	useEffect(() => {
 		const initialPage = data.find(item => item.id === 'home')
@@ -46,32 +49,25 @@ export default function App() {
 		setPreviousPageIndex(randomIndex);
 		setCurrentPage(data[randomIndex]);
 	  };
-
-	const renderPage = () => {
-		if (!currentPage) {
-			return (
-				<ul className='main'>
-					{data.map(item => (
-						<Card key={item.id} item={item} setCurrentPage={setCurrentPage} />
-					))}
-				</ul>
-			)
-		}
-
-		return <Country countryId={currentPage.p1} />
-	}
-
-	return (
+	  return (
 		<>
-			<Header
-				countryName={currentPage?.p2}
-				countryFlag={currentPage?.id}
-				countrySite={currentPage?.site}
-				onHomeClick={() => setCurrentPage(null)}
-				onRandomCountryClick={handleRandomCountryClick}
+		  <Header
+			countryName={currentPage?.p2}
+			countryFlag={currentPage?.id}
+			countrySite={currentPage?.site}
+			onHomeClick={() => setCurrentPage(null)}
+			onRandomCountryClick={handleRandomCountryClick}
+		  />
+		  {!currentPage && (
+			<Cards
+			  data={data}
+			  cardsPerPage={cardsPerPage}
+			  repetitions={repetitions}
+			  setCurrentPage={setCurrentPage}
 			/>
-			{renderPage()}
-			<button className='scrollTopButton'>top</button>
+		  )}
+		  {currentPage && <Country countryId={currentPage.p1} />}
+		  <button className="scrollTopButton">top</button>
 		</>
-	)
+	  );
 }
