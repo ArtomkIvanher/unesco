@@ -1,4 +1,11 @@
 header{
+    position: absolute;
+    z-index: 100;
+    background-color: rgb(77, 77, 77);
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100px;
     .btn{
         button{
         }

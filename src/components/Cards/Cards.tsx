@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from './Card';
 import { PageData } from '../../App';
+import s from './Card.module.scss'
 
 interface CardGridProps {
   data: PageData[];
@@ -21,22 +22,27 @@ const Cards: React.FC<CardGridProps> = ({
   }
 
   return (
-    <div className="main">
-      {groupedData.map((group, groupIndex) => (
-        <div key={groupIndex} className="group-block">
-          {Array.from({ length: repetitions }).map((_, repetitionIndex) => (
-            <ul key={repetitionIndex} className="repetition-block">
+    <div className={s.main}>
+      {groupedData.map((group, groupIndex) => {
+        const uniqueId = `group_block_${groupIndex}`; // Генеруємо унікальний ID
+  
+        return (
+          <div key={groupIndex} id={uniqueId} className={`${s.group_block} ${s[uniqueId]}`}> 
+            {/* Інтерполюємо ID в className */}
+            {Array.from({ length: repetitions }).map((_, repetitionIndex) => (
+              <ul key={repetitionIndex} className={s.repetition_block}>
                 {group.map((item) => (
-                  <Card
+                  <Card 
                     key={`${item.p2}-${repetitionIndex}`}
                     item={item}
                     setCurrentPage={setCurrentPage}
                   />
                 ))}
-            </ul>
-          ))}
-        </div>
-      ))}
+              </ul>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 };

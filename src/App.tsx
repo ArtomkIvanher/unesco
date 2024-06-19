@@ -1,10 +1,10 @@
-import { useEffect, useState} from 'react'; // Corrected import
+import { useEffect, useState } from 'react' // Corrected import
 import data from '../src/data/data'
 import Cards from './components/Cards/Cards'
 import Country from './components/Сountry/Сountry'
+import useScrollToTop from './hooks/useScrollTop'
 import { Header } from './shader/Header/Header'
 import './style/App.scss'
-import useScrollToTop from './hooks/useScrollTop'
 
 export interface PageData {
 	id: string
@@ -29,11 +29,35 @@ export interface CountryData {
 
 export default function App() {
 	const [currentPage, setCurrentPage] = useState<PageData | null>(null)
-	const [previousPageIndex, setPreviousPageIndex] = useState<number | null>(null);
-	useScrollToTop('scrollTopButton');
-	
-	const cardsPerPage = 3; // Кількість карток на сторінці
-    const repetitions = 10; // Кількість повторень кожної групи карток
+	const [previousPageIndex, setPreviousPageIndex] = useState<number | null>(
+		null
+	)
+	useScrollToTop('scrollTopButton')
+
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+	const cardsPerPage = 3
+	const repetitionGroupWidth = 700
+	const defaultExtraRepetitions = 3 // За замовчуванням на 2 повторення більше
+
+	// Calculate repetitions based on windowWidth
+	const calculateRepetitions = () => {
+		const availableWidth = windowWidth - 200
+		const baseRepetitions = Math.floor(availableWidth / repetitionGroupWidth)
+		const repetitions = Math.max(1, baseRepetitions + defaultExtraRepetitions) // Додаємо 2
+		return repetitions
+	}
+	const repetitions = calculateRepetitions()
+
+	useEffect(() => {
+		// ... (your existing initial page logic)
+
+		const handleResize = () => {
+			setWindowWidth(window.innerWidth)
+		}
+
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
 
 	useEffect(() => {
 		const initialPage = data.find(item => item.id === 'home')
@@ -41,33 +65,33 @@ export default function App() {
 	}, [])
 
 	const handleRandomCountryClick = () => {
-		let randomIndex: number;
+		let randomIndex: number
 		do {
-		  randomIndex = Math.floor(Math.random() * data.length);
-		} while (randomIndex === previousPageIndex);
-	
-		setPreviousPageIndex(randomIndex);
-		setCurrentPage(data[randomIndex]);
-	  };
-	  return (
+			randomIndex = Math.floor(Math.random() * data.length)
+		} while (randomIndex === previousPageIndex)
+
+		setPreviousPageIndex(randomIndex)
+		setCurrentPage(data[randomIndex])
+	}
+	return (
 		<>
-		  <Header
-			countryName={currentPage?.p2}
-			countryFlag={currentPage?.id}
-			countrySite={currentPage?.site}
-			onHomeClick={() => setCurrentPage(null)}
-			onRandomCountryClick={handleRandomCountryClick}
-		  />
-		  {!currentPage && (
-			<Cards
-			  data={data}
-			  cardsPerPage={cardsPerPage}
-			  repetitions={repetitions}
-			  setCurrentPage={setCurrentPage}
+			<Header
+				countryName={currentPage?.p2}
+				countryFlag={currentPage?.id}
+				countrySite={currentPage?.site}
+				onHomeClick={() => setCurrentPage(null)}
+				onRandomCountryClick={handleRandomCountryClick}
 			/>
-		  )}
-		  {currentPage && <Country countryId={currentPage.p1} />}
-		  <button className="scrollTopButton">top</button>
+			{!currentPage && (
+				<Cards
+					data={data}
+					cardsPerPage={cardsPerPage}
+					repetitions={repetitions}
+					setCurrentPage={setCurrentPage}
+				/>
+			)}
+			{currentPage && <Country countryId={currentPage.p1} />}
+			<button className='scrollTopButton'>top</button>
 		</>
-	  );
+	)
 }

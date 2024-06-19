@@ -11,7 +11,7 @@ export const Card: React.FC<CardProps> = ({ item, setCurrentPage }) => {
 
   return (
     <li
-		className={`scrollTopButton ${s.main_card} ${item.id}`}
+		className={`scrollTopButton ${s.card} ${item.id}`}
 		key={item.id}
 		onClick={() => setCurrentPage(item)}
 	>
