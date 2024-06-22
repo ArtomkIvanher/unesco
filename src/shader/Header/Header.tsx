@@ -12,7 +12,6 @@ interface Props {
 export const Header: React.FC<Props> = ({
 	onHomeClick,
 	countryName,
-	countryFlag,
 	countrySite,
 	onRandomCountryClick,
 }) => {
@@ -37,12 +36,12 @@ export const Header: React.FC<Props> = ({
 			</div>
 			<div className={s.counter_flag}>
 				<div className={`${s.active} ${s.counter_flag__div}`} />
-				{countryFlag && <img src={`/unesco/img/${countryFlag}.png`} alt='' />}
 				{countrySite && (
 					<button className={s.btn_linia}>
 						<a href={countrySite}>{countryName}</a>
 					</button>
 				)}
+				{countryName && <img src={`/unesco/img/countryFlag/${countryName}.png`} alt='' />}
 			</div>
 		</header>
 	)

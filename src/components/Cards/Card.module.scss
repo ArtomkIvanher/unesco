@@ -1,8 +1,8 @@
-$card_width: 200px;
-$card_height: 160px;
+$card_width: 300px;
+$card_height: 200px;
 $card_margin: 10px;
 
-$starting_offset: -100px; 
+$starting_offset: -30px; 
 
 @keyframes group_block {
     from {
@@ -21,20 +21,51 @@ $starting_offset: -100px;
 
 	.group_block_0{
 		animation: group_block 5s linear infinite none;
+
+		.Australia{
+			box-shadow: 10px 10px 100px rgba(0, 32, 99, 0.658);
+			&:hover{
+			}
+		}
+		.Austria{
+			box-shadow: 10px 10px 100px rgba(158, 19, 19, 0.658);
+		}
+		.Greece{
+			box-shadow: 10px 10px 100px rgba(33, 62, 126, 0.658);
+		}
+
 	}
 	.group_block_1{
 		animation: group_block 10s linear infinite none;
+
+		.Ukraine{
+			box-shadow: 10px 10px 100px rgba(182, 165, 14, 0.658);
+		}
+		.Germany{
+			box-shadow: 10px 10px 100px rgba(255, 145, 0, 0.658);
+		}
+		.USA{
+			box-shadow: 10px 10px 100px rgba(187, 41, 41, 0.658);
+		}
+
 	}
 	.group_block_2{
 		animation: group_block 7s linear infinite none; 
+
+		.Japan{
+			box-shadow: 10px 10px 100px rgba(143, 97, 97, 0.658);
+		}
 	}
 
 }
 
+
+
 .group_block {
 	display: flex;
 	position: relative;
-	rotate: (10deg);
+	rotate: (0deg);
+	margin-bottom: 40px;
 	.repetition_block {
 		display: flex;
 		padding: 0;
@@ -47,6 +78,7 @@ $starting_offset: -100px;
 	height: $card_height;
 	list-style: none;
 	margin: 0 $card_margin;
+	border-radius: 10px;
 }
 
 .img {

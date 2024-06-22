@@ -32,7 +32,7 @@ export default function CountryBlock({
 					<div className={s.image_container}>
 						<img
 							className='anim_items'
-							src={`/unesco/img/${img}`}
+							src={`/unesco/img/country/${img}`}
 							alt={title || ''}
 						/>
 					</div>

@@ -11,13 +11,12 @@ export interface PageData {
 	setting: string
 	color: string
 	colorText: string
-	p1: string
 	p2: string
 	site: string
 }
 
 export interface CountryData {
-	id: number
+	id: string
 	year1?: string
 	title1?: string
 	text1?: string
@@ -36,14 +35,13 @@ export default function App() {
 
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 	const cardsPerPage = 3
-	const repetitionGroupWidth = 700
-	const defaultExtraRepetitions = 3 // За замовчуванням на 2 повторення більше
+	const repetitionGroupWidth = 300 // Width Card
 
 	// Calculate repetitions based on windowWidth
 	const calculateRepetitions = () => {
 		const availableWidth = windowWidth - 200
 		const baseRepetitions = Math.floor(availableWidth / repetitionGroupWidth)
-		const repetitions = Math.max(1, baseRepetitions + defaultExtraRepetitions) // Додаємо 2
+		const repetitions = Math.max(1, baseRepetitions) // Додаємо 2
 		return repetitions
 	}
 	const repetitions = calculateRepetitions()
@@ -76,8 +74,7 @@ export default function App() {
 	return (
 		<>
 			<Header
-				countryName={currentPage?.p2}
-				countryFlag={currentPage?.id}
+				countryName={currentPage?.id}
 				countrySite={currentPage?.site}
 				onHomeClick={() => setCurrentPage(null)}
 				onRandomCountryClick={handleRandomCountryClick}
@@ -90,7 +87,7 @@ export default function App() {
 					setCurrentPage={setCurrentPage}
 				/>
 			)}
-			{currentPage && <Country countryId={currentPage.p1} />}
+			{currentPage && <Country countryId={currentPage.id} />}
 			<button className='scrollTopButton'>top</button>
 		</>
 	)

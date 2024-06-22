@@ -30,7 +30,7 @@ const Cards: React.FC<CardGridProps> = ({
           <div key={groupIndex} id={uniqueId} className={`${s.group_block} ${s[uniqueId]}`}> 
             {/* Інтерполюємо ID в className */}
             {Array.from({ length: repetitions }).map((_, repetitionIndex) => (
-              <ul key={repetitionIndex} className={s.repetition_block}>
+              <div key={repetitionIndex} className={s.repetition_block}>
                 {group.map((item) => (
                   <Card 
                     key={`${item.p2}-${repetitionIndex}`}
@@ -38,7 +38,7 @@ const Cards: React.FC<CardGridProps> = ({
                     setCurrentPage={setCurrentPage}
                   />
                 ))}
-              </ul>
+              </div>
             ))}
           </div>
         );

@@ -6,6 +6,9 @@ header{
     top: 0;
     width: 100vw;
     height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     .btn{
         button{
         }
@@ -13,6 +16,9 @@ header{
         }
     }
     .counter_flag{
+        display: flex;
+        align-items: center;
+        height: 100%;
         .active{
 
         }
@@ -20,7 +26,7 @@ header{
 
         }
         img{
-
+            height: 100%;
         }
         .btn_linia{
             a{

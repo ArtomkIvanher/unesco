@@ -10,19 +10,19 @@ export interface CardProps {
 export const Card: React.FC<CardProps> = ({ item, setCurrentPage }) => {
 
   return (
-    <li
-		className={`scrollTopButton ${s.card} ${item.id}`}
+    <div
+		className={`scrollTopButton ${s.card} ${s[item.id]}`}
 		key={item.id}
 		onClick={() => setCurrentPage(item)}
 	>
 		<div className={`${s.img} ${item.setting}`}>
-			<img src={`/unesco/img/${item.id}.png`} alt='' />
+			<img src={`/unesco/img/countryFlag/${item.id}.png`} alt='' />
 		</div>
 		<div className={s.card_btn}>
-			<p>{item.p1}</p>
+			<p>{item.id}</p>
 			<p>|</p>
 			<p>{item.p2}</p>
 		</div>
-	</li>
+	</div>
   )
 }
