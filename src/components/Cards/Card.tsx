@@ -15,6 +15,8 @@ export const Card: React.FC<CardProps> = ({ item, setCurrentPage }) => {
 		key={item.id}
 		onClick={() => setCurrentPage(item)}
 	>
+		<div>
+
 		<div className={`${s.img} ${item.setting}`}>
 			<img src={`/unesco/img/countryFlag/${item.id}.png`} alt='' />
 		</div>
@@ -22,6 +24,7 @@ export const Card: React.FC<CardProps> = ({ item, setCurrentPage }) => {
 			<p>{item.id}</p>
 			<p>|</p>
 			<p>{item.p2}</p>
+		</div>
 		</div>
 	</div>
   )

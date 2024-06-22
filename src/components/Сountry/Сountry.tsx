@@ -34,14 +34,14 @@ export default function Country({ countryId }: CountryProps) {
 
   return (
     <div>
-      {countryData.map((item: CountryDataItem) => (
+      {countryData.map((item: CountryDataItem, index: number) => (
         <div key={item.id}>
           {item.year1 && (
             <CountryBlock
               year={item.year1}
               title={item.title1}
               text={item.text1}
-              img={`${item.img}img1.png`}
+              img={`${countryId}/el${index + 1}img1.png`}
             />
           )}
     
@@ -50,7 +50,7 @@ export default function Country({ countryId }: CountryProps) {
               year={item.year2}
               title={item.title2}
               text={item.text2}
-              img={`${item.img}img2.png`}
+              img={`${countryId}/el${index + 1}img2.png`}
               reversed
             />
           )}
