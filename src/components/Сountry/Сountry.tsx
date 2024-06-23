@@ -6,7 +6,6 @@ interface CountryDataItem {
   year1?: number;
   title1?: string;
   text1?: string;
-  img?: string;
   year2?: number;
   title2?: string;
   text2?: string;
