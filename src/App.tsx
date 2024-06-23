@@ -8,10 +8,7 @@ import './style/App.scss'
 
 export interface PageData {
 	id: string
-	setting: string
-	color: string
-	colorText: string
-	p2: string
+	name: string
 }
 
 export interface CountryData {
@@ -73,7 +70,7 @@ export default function App() {
 		<>
 			<Header
 				countryId={currentPage?.id}
-				countryName={currentPage?.p2}
+				countryName={currentPage?.name}
 				onHomeClick={() => setCurrentPage(null)}
 				onRandomCountryClick={handleRandomCountryClick}
 			/>
