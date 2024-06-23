@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/unesco/static/css/main.393b979f.css",
-    "main.js": "/unesco/static/js/main.28e71c56.js",
-    "static/js/996.b0531afe.chunk.js": "/unesco/static/js/996.b0531afe.chunk.js",
-    "static/js/9.ab8987a4.chunk.js": "/unesco/static/js/9.ab8987a4.chunk.js",
-    "static/js/587.c5b42232.chunk.js": "/unesco/static/js/587.c5b42232.chunk.js",
-    "static/js/45.c3802c97.chunk.js": "/unesco/static/js/45.c3802c97.chunk.js",
-    "static/js/934.2939698f.chunk.js": "/unesco/static/js/934.2939698f.chunk.js",
-    "static/js/589.02cabe4f.chunk.js": "/unesco/static/js/589.02cabe4f.chunk.js",
-    "static/js/663.ec36e74f.chunk.js": "/unesco/static/js/663.ec36e74f.chunk.js",
+    "main.css": "/unesco/static/css/main.b898fb9e.css",
+    "main.js": "/unesco/static/js/main.52e72cc1.js",
+    "static/js/757.489b9bb8.chunk.js": "/unesco/static/js/757.489b9bb8.chunk.js",
+    "static/js/920.ff3b3823.chunk.js": "/unesco/static/js/920.ff3b3823.chunk.js",
+    "static/js/874.22d0a061.chunk.js": "/unesco/static/js/874.22d0a061.chunk.js",
+    "static/js/686.fd99a87d.chunk.js": "/unesco/static/js/686.fd99a87d.chunk.js",
+    "static/js/859.aabcd79f.chunk.js": "/unesco/static/js/859.aabcd79f.chunk.js",
+    "static/js/233.ff87fb72.chunk.js": "/unesco/static/js/233.ff87fb72.chunk.js",
+    "static/js/486.6ee591a9.chunk.js": "/unesco/static/js/486.6ee591a9.chunk.js",
+    "static/js/944.66673b31.chunk.js": "/unesco/static/js/944.66673b31.chunk.js",
+    "static/js/82.5f107341.chunk.js": "/unesco/static/js/82.5f107341.chunk.js",
     "index.html": "/unesco/index.html",
-    "main.393b979f.css.map": "/unesco/static/css/main.393b979f.css.map",
-    "main.28e71c56.js.map": "/unesco/static/js/main.28e71c56.js.map"
+    "main.b898fb9e.css.map": "/unesco/static/css/main.b898fb9e.css.map",
+    "main.52e72cc1.js.map": "/unesco/static/js/main.52e72cc1.js.map"
   },
   "entrypoints": [
-    "static/css/main.393b979f.css",
-    "static/js/main.28e71c56.js"
+    "static/css/main.b898fb9e.css",
+    "static/js/main.52e72cc1.js"
   ]
 }
