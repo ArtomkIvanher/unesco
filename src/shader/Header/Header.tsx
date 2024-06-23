@@ -3,16 +3,16 @@ import s from './Header.module.scss'
 
 interface Props {
 	onHomeClick?: () => void
-	countryName?: string
+	countryId?: string
 	countryFlag?: string
-	countrySite?: string
+	countryName?: string
 	onRandomCountryClick?: () => void
 }
 
 export const Header: React.FC<Props> = ({
 	onHomeClick,
+	countryId,
 	countryName,
-	countrySite,
 	onRandomCountryClick,
 }) => {
 	const { theme, toggleTheme } = useTheme()
@@ -36,12 +36,14 @@ export const Header: React.FC<Props> = ({
 			</div>
 			<div className={s.counter_flag}>
 				<div className={`${s.active} ${s.counter_flag__div}`} />
-				{countrySite && (
+				{countryId && (
 					<button className={s.btn_linia}>
-						<a href={countrySite}>{countryName}</a>
-					</button>
+					<a href={`https://uk.wikipedia.org/wiki/${countryName}`}>
+						{countryName}
+					</a>
+				</button>
 				)}
-				{countryName && <img src={`/unesco/img/countryFlag/${countryName}.png`} alt='' />}
+				{countryId && <img src={`/unesco/img/countryFlag/${countryId}.png`} alt='' />}
 			</div>
 		</header>
 	)

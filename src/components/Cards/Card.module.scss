@@ -50,6 +50,14 @@ $starting_offset: -30px;
 	.group_block_2{
 		animation: group_block 7s linear infinite none; 
 
+		.Switzerland {
+			box-shadow: 0px 0px 100px rgba(173, 21, 21, 0.658);
+		}
+
+		.Sweden{
+			box-shadow: 0px 0px 100px rgba(21, 105, 173, 0.658);
+		}
+
 		.Japan{
 			box-shadow: 0px 0px 100px rgba(143, 97, 97, 0.658);
 		}
@@ -77,19 +85,18 @@ $starting_offset: -30px;
 	list-style: none;
 	margin: 0 $card_margin;
 	border-radius: 10px;
+	background-color: var(--background-color);
 }
 
 
 .img {
+	width: $card_width;
+	height: 150px;
 	img {
-		width: $card_width;
+		width: 100%;
+		height: 100%;
         border-radius: 10px;
-        &:active{
-            transition: 1s;
-            position: absolute;
-            width: 400px;
-            rotate: (0deg);
-        }
+		object-fit: cover;
 	}
 }
 

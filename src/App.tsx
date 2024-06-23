@@ -12,7 +12,6 @@ export interface PageData {
 	color: string
 	colorText: string
 	p2: string
-	site: string
 }
 
 export interface CountryData {
@@ -23,7 +22,6 @@ export interface CountryData {
 	year2?: string
 	title2?: string
 	text2?: string
-	img: string
 }
 
 export default function App() {
@@ -74,8 +72,8 @@ export default function App() {
 	return (
 		<>
 			<Header
-				countryName={currentPage?.id}
-				countrySite={currentPage?.site}
+				countryId={currentPage?.id}
+				countryName={currentPage?.p2}
 				onHomeClick={() => setCurrentPage(null)}
 				onRandomCountryClick={handleRandomCountryClick}
 			/>
