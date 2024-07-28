@@ -34,7 +34,13 @@ const Cards: React.FC<CardGridProps> = ({
 					>
 						{/* Інтерполюємо ID в className */}
 						{Array.from({ length: repetitions }).map((_, repetitionIndex) => (
-							<div key={repetitionIndex} className={s.repetition_block}>
+							<div
+								key={repetitionIndex}
+								className={`${s.repetition_block} ${
+									s[`repetition_block_${repetitionIndex + 1}`] ||
+									`repetition_block_${repetitionIndex + 1}`
+								}`}
+							>
 								{group.map(item => (
 									<Card
 										key={`${item.name}-${repetitionIndex}`}

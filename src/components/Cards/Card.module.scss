@@ -2,80 +2,136 @@ $card_width: 300px;
 $card_height: 200px;
 $card_margin: 10px;
 
-$starting_offset: -30px; 
+$starting_offset: -30px;
+
+html[data-theme='dark'] {
+	.main {
+		margin-top: 200px;
+	}
+
+	.group_block {
+		display: flex;
+		position: relative;
+		rotate: (0deg);
+		margin-bottom: 40px;
+		.repetition_block {
+			display: flex;
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.group_block_0 {
+		animation: group_block 7s linear infinite none;
+	}
+	.group_block_1 {
+		animation: group_block 10s linear infinite none;
+	}
+	.group_block_2 {
+		animation: group_block 8s linear infinite none;
+	}
+	.group_block_3 {
+		animation: group_block 6s linear infinite none;
+	}
+	.group_block_4 {
+		animation: group_block 12s linear infinite none;
+	}
+
+	.Australia {
+		box-shadow: 0px 0px 100px rgba(0, 32, 99, 0.658);
+	}
+	.Austria {
+		box-shadow: 0px 0px 100px rgba(158, 19, 19, 0.658);
+	}
+	.Greece {
+		box-shadow: 0px 0px 100px rgba(33, 62, 126, 0.658);
+	}
+
+	.Ukraine {
+		box-shadow: 0px 0px 100px rgba(182, 165, 14, 0.658);
+	}
+	.Germany {
+		box-shadow: 0px 0px 100px rgba(255, 145, 0, 0.658);
+	}
+	.USA {
+		box-shadow: 0px 0px 100px rgba(187, 41, 41, 0.658);
+	}
+
+	.Spain {
+		box-shadow: 0px 0px 100px rgba(201, 32, 10, 0.658);
+	}
+
+	.Italy {
+		box-shadow: 0px 0px 100px rgba(24, 192, 24, 0.658);
+	}
+
+	.Canada {
+		box-shadow: 0px 0px 100px rgba(250, 131, 101, 0.658);
+	}
+
+	.China {
+		box-shadow: 0px 0px 100px rgba(221, 23, 23, 0.658);
+	}
+
+	.Romania {
+		box-shadow: 0px 0px 100px rgba(180, 57, 26, 0.658);
+	}
+
+	.Poland {
+		box-shadow: 0px 0px 100px rgba(158, 47, 47, 0.658);
+	}
+
+	.Switzerland {
+		box-shadow: 0px 0px 100px rgba(173, 21, 21, 0.658);
+	}
+
+	.Sweden {
+		box-shadow: 0px 0px 100px rgba(21, 105, 173, 0.658);
+	}
+
+	.Japan {
+		box-shadow: 0px 0px 100px rgba(143, 97, 97, 0.658);
+	}
+}
+
+html[data-theme='light'] {
+	.repetition_block {
+		display: none;
+	}
+
+	.main {
+		margin-top: 200px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.group_block {
+		width: auto;
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		max-width: 1400px;
+		.repetition_block_1 {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
 
 @keyframes group_block {
-    from {
-        transform: translate($starting_offset); // Start 100px to the left
-    }
-    to {
-        transform: translate(
-            calc(($card_width * -3) - ($card_margin * 6) + $starting_offset) // Adjust for offset
-        );
-    }
-}
-
-.main{
-    margin-top: 200px;
-	z-index: 1;
-
-	.group_block_0{
-		animation: group_block 5s linear infinite none;
-
-		.Australia{
-			box-shadow: 0px 0px 100px rgba(0, 32, 99, 0.658);
-		}
-		.Austria{
-			box-shadow: 0px 0px 100px rgba(158, 19, 19, 0.658);
-		}
-		.Greece{
-			box-shadow: 0px 0px 100px rgba(33, 62, 126, 0.658);
-		}
-
+	from {
+		transform: translate($starting_offset); // Start 100px to the left
 	}
-	.group_block_1{
-		animation: group_block 10s linear infinite none;
-
-		.Ukraine{
-			box-shadow: 0px 0px 100px rgba(182, 165, 14, 0.658);
-		}
-		.Germany{
-			box-shadow: 0px 0px 100px rgba(255, 145, 0, 0.658);
-		}
-		.USA{
-			box-shadow: 0px 0px 100px rgba(187, 41, 41, 0.658);
-		}
-
-	}
-	.group_block_2{
-		animation: group_block 7s linear infinite none; 
-
-		.Switzerland {
-			box-shadow: 0px 0px 100px rgba(173, 21, 21, 0.658);
-		}
-
-		.Sweden{
-			box-shadow: 0px 0px 100px rgba(21, 105, 173, 0.658);
-		}
-
-		.Japan{
-			box-shadow: 0px 0px 100px rgba(143, 97, 97, 0.658);
-		}
-	}
-
-}
-
-
-
-.group_block {
-	display: flex;
-	position: relative;
-	rotate: (0deg);
-	margin-bottom: 40px;
-	.repetition_block {
-		display: flex;
-		padding: 0;
-		margin: 0;
+	to {
+		transform: translate(
+			calc(($card_width * -3) - ($card_margin * 6) + $starting_offset)
+				// Adjust for offset
+		);
 	}
 }
 
@@ -86,17 +142,31 @@ $starting_offset: -30px;
 	margin: 0 $card_margin;
 	border-radius: 10px;
 	background-color: var(--background-color);
-}
+	overflow: hidden;
 
+	.img {
+		width: $card_width;
+		height: 150px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+			object-fit: cover;
+			transition: 0.5s;
+		}
+	}
 
-.img {
-	width: $card_width;
-	height: 150px;
-	img {
-		width: 100%;
-		height: 100%;
-        border-radius: 10px;
-		object-fit: cover;
+	&:hover {
+		.img {
+			img {
+				width: 105%;
+				height: 105%;
+			}
+		}
 	}
 }
 

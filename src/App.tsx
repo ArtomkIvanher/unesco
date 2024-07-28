@@ -5,6 +5,7 @@ import Country from './components/Сountry/Сountry'
 import useScrollToTop from './hooks/useScrollTop'
 import { Header } from './shader/Header/Header'
 import './style/App.scss'
+import './style/btn_linia.scss'
 
 export interface PageData {
 	id: string
@@ -30,16 +31,16 @@ export default function App() {
 
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 	const cardsPerPage = 3
-	const repetitionGroupWidth = 300 // Width Card
+	const cardWidth = 300 // Width Card
 
 	// Calculate repetitions based on windowWidth
 	const calculateRepetitions = () => {
-		const availableWidth = windowWidth - 200
-		const baseRepetitions = Math.floor(availableWidth / repetitionGroupWidth)
-		const repetitions = Math.max(1, baseRepetitions) // Додаємо 2
-		return repetitions
-	}
-	const repetitions = calculateRepetitions()
+		const repetitionGroupWidth = cardsPerPage * cardWidth;
+		const baseRepetitions = Math.ceil(windowWidth / repetitionGroupWidth);
+		const repetitions = baseRepetitions + 1; // Додаємо одне повторення
+		return repetitions;
+	  };	  
+	  const repetitions = calculateRepetitions();
 
 	useEffect(() => {
 		// ... (your existing initial page logic)

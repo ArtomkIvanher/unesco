@@ -12,6 +12,30 @@ const data = [
 		name: 'Греція',
 	},
 	{
+		id: 'Spain',
+		name: 'Іспанія',
+	},
+	{
+		id: 'Italy',
+		name: 'Італія',
+	},
+	{
+		id: 'Canada',
+		name: 'Канада',
+	},
+	{
+		id: 'China',
+		name: 'Китай',
+	},
+	{
+		id: 'Poland',
+		name: 'Польща',
+	},
+	{
+		id: 'Romania',
+		name: 'Румунія',
+	},
+	{
 		id: 'Ukraine',
 		name: 'Україна',
 	},
