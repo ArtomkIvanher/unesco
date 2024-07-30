@@ -35,12 +35,12 @@ export default function App() {
 
 	// Calculate repetitions based on windowWidth
 	const calculateRepetitions = () => {
-		const repetitionGroupWidth = cardsPerPage * cardWidth;
-		const baseRepetitions = Math.ceil(windowWidth / repetitionGroupWidth);
-		const repetitions = baseRepetitions + 1; // Додаємо одне повторення
-		return repetitions;
-	  };	  
-	  const repetitions = calculateRepetitions();
+		const repetitionGroupWidth = cardsPerPage * cardWidth
+		const baseRepetitions = Math.ceil(windowWidth / repetitionGroupWidth)
+		const repetitions = baseRepetitions + 1 // Додаємо одне повторення
+		return repetitions
+	}
+	const repetitions = calculateRepetitions()
 
 	useEffect(() => {
 		// ... (your existing initial page logic)
