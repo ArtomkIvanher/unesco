@@ -23,36 +23,49 @@ const Cards: React.FC<CardGridProps> = ({
 
 	return (
 		<div className={s.main}>
-			{groupedData.map((group, groupIndex) => {
-				const uniqueId = `group_block_${groupIndex}` // Генеруємо унікальний ID
+			{repetitions <= 2 ? (
+				// If repetitions are 2 or fewer, render all cards in one block without group_block
+				<div className={s.flex_block}>
+					{data.map(item => (
+						<Card
+							key={item.name}
+							item={item}
+							setCurrentPage={setCurrentPage}
+						/>
+					))}
+				</div>
+			) : (
+				// If repetitions are more than 2, render with specified repetitions
+				groupedData.map((group, groupIndex) => {
+					const uniqueId = `group_block_${groupIndex}` // Генеруємо унікальний ID
 
-				return (
-					<div
-						key={groupIndex}
-						id={uniqueId}
-						className={`${s.group_block} ${s[uniqueId]}`}
-					>
-						{/* Інтерполюємо ID в className */}
-						{Array.from({ length: repetitions }).map((_, repetitionIndex) => (
-							<div
-								key={repetitionIndex}
-								className={`${s.repetition_block} ${
-									s[`repetition_block_${repetitionIndex + 1}`] ||
-									`repetition_block_${repetitionIndex + 1}`
-								}`}
-							>
-								{group.map(item => (
-									<Card
-										key={`${item.name}-${repetitionIndex}`}
-										item={item}
-										setCurrentPage={setCurrentPage}
-									/>
-								))}
-							</div>
-						))}
-					</div>
-				)
-			})}
+					return (
+						<div
+							key={groupIndex}
+							id={uniqueId}
+							className={`${s.group_block} ${s[uniqueId]}`}
+						>
+							{Array.from({ length: repetitions }).map((_, repetitionIndex) => (
+								<div
+									key={repetitionIndex}
+									className={`${s.repetition_block} ${
+										s[`repetition_block_${repetitionIndex + 1}`] ||
+										`repetition_block_${repetitionIndex + 1}`
+									}`}
+								>
+									{group.map(item => (
+										<Card
+											key={`${item.name}-${repetitionIndex}`}
+											item={item}
+											setCurrentPage={setCurrentPage}
+										/>
+									))}
+								</div>
+							))}
+						</div>
+					)
+				})
+			)}
 		</div>
 	)
 }

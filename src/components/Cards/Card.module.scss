@@ -48,6 +48,7 @@ html[data-theme='light'] {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		gap: 20px;
 	}
 
 	.group_block {
@@ -63,6 +64,7 @@ html[data-theme='light'] {
 			justify-content: space-around;
 			padding: 0;
 			margin: 0;
+			gap: 20px;
 		}
 	}
 }
@@ -77,6 +79,13 @@ html[data-theme='light'] {
 		);
 	}
 }
+
+.flex_block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+  }
 
 .card {
 	z-index: 3;
