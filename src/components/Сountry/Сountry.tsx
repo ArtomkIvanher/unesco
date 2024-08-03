@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CountryBlock from './CountryBlock';
+import s from './Сountry.module.scss'
 
 interface CountryDataItem {
   id: number;
@@ -32,7 +33,7 @@ export default function Country({ countryId }: CountryProps) {
 
 
   return (
-    <div>
+    <div className={s.main}>
       {countryData.map((item: CountryDataItem, index: number) => (
         <div key={item.id}>
           {item.year1 && (
