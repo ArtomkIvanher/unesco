@@ -21,7 +21,7 @@
 }
 
 header {
-	position: relative;
+	position: fixed;
 	z-index: 10;
 	background-color: var(--background-color-1);
 	left: 0;
@@ -31,6 +31,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	transition: top 0.5s ease-in-out; /* Додаємо плавний перехід для хедера */
 	button {
 		background-color: #00000000;
 		border: none;
@@ -96,14 +97,30 @@ header {
 
 .block {
 	transition: opacity 0.5s ease-in-out;
-  }
-  
-  .hidden {
-	opacity: 0;
-	display: none;
-  }
-  
-  .visible {
-	opacity: 1;
-  }
-  
+}
+
+@keyframes slideDown {
+	0% {
+		top: -100px;
+	}
+	100% {
+		top: 0;
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: -100px;
+	}
+}
+
+.hidden {
+	animation: slideUp 0.5s ease-in-out forwards;
+}
+
+.visible {
+	animation: slideDown 0.5s ease-in-out forwards;
+}

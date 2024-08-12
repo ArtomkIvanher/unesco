@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CountryBlock from './CountryBlock';
-import s from './Сountry.module.scss'
+import s from './Сountry.module.scss';
 
 interface CountryDataItem {
   id: number;
@@ -31,7 +31,6 @@ export default function Country({ countryId }: CountryProps) {
     fetchData();
   }, [countryId]);
 
-
   return (
     <div className={s.main}>
       {countryData.map((item: CountryDataItem, index: number) => (
@@ -42,15 +41,17 @@ export default function Country({ countryId }: CountryProps) {
               title={item.title1}
               text={item.text1}
               img={`${countryId}/el${index + 1}img1.png`}
+              className={`_${index + 1}el1`}
             />
           )}
-    
+          
           {item.year2 && (
             <CountryBlock
               year={item.year2}
               title={item.title2}
               text={item.text2}
               img={`${countryId}/el${index + 1}img2.png`}
+              className={`_${index + 1}el2`}
               reversed
             />
           )}
