@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react' // Corrected import
 import data from '../src/data/data'
 import Cards from './components/Cards/Cards'
+import Hello from './components/Hello/Hello'
 import Country from './components/Сountry/Сountry'
 import useScrollToTop from './hooks/useScrollTop'
 import { Header } from './shader/Header/Header'
@@ -76,12 +77,16 @@ export default function App() {
 				onRandomCountryClick={handleRandomCountryClick}
 			/>
 			{!currentPage && (
-				<Cards
-					data={data}
-					cardsPerPage={cardsPerPage}
-					repetitions={repetitions}
-					setCurrentPage={setCurrentPage}
-				/>
+				<>
+					<Hello />
+
+					<Cards
+						data={data}
+						cardsPerPage={cardsPerPage}
+						repetitions={repetitions}
+						setCurrentPage={setCurrentPage}
+					/>
+				</>
 			)}
 			{currentPage && <Country countryId={currentPage.id} />}
 			<button className='scrollTopButton'>top</button>
