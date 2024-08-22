@@ -62,7 +62,6 @@ export const Header: React.FC<Props> = ({
         <button className='btn_linia' onClick={() => toggleTheme()}>Тема</button>
       </div>
       <div className={s.counter_flag}>
-        <div className={`${s.active} ${s.counter_flag__div}`} />
         {countryId && (
           <button className='btn_linia'>
             <a href={`https://uk.wikipedia.org/wiki/${countryName}`}>

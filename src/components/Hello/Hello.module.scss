@@ -1,27 +1,28 @@
 $font-size: 7rem;
 
-@keyframes bg {
+@keyframes hello  {
 	0% {
 	}
-	50% {
-		top: -100%;
+	70%{
+		height: 100vh;
 	}
 	100% {
-		top: 0;
+		height: 300px;
 	}
 }
 
 @keyframes block_texts {
 	60% {
-		left: -50%;
+		left: -100vw;
 	}
 	100% {
 		left: 0;
 	}
 }
 
+
 @keyframes texts {
-	90% {
+	60% {
 		top: $font-size;
 	}
 	100% {
@@ -32,29 +33,17 @@ $font-size: 7rem;
 .hello {
 	width: 100vw;
 	height: 100vh;
-	position: relative;
-
-	.radial_ellipse_far {
-		min-height: 200vh;
-		min-width: 200vw;
-		position: absolute;
-		top: -100%;
-		z-index: 1;
-		background: radial-gradient(
-			ellipse farthest-corner at 0% 100%,
-			var(--background-color) 50%,
-			rgba(73, 73, 73, 0.288) 60%,
-			rgba(0, 0, 0, 0)
-		);
-		animation: bg 2s linear forwards;
-	}
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: hello 1.5s linear forwards;
 
 	h1 {
 		font-size: $font-size;
 		display: inline;
-		position: absolute;
-		bottom: 0;
-		left: -50%;
+		position: relative;
+		left: -100vw;
 		border-bottom: 20px var(--text-color) solid;
 		animation: block_texts 1s linear forwards;
 		overflow: hidden;

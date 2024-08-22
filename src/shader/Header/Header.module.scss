@@ -10,15 +10,14 @@
 
 @keyframes anim_counter_flag {
 	0% {
-		right: 500px;
 	}
 	50% {
-		right: 500px;
 	}
 	100% {
-		right: 1500px;
 	}
 }
+
+
 
 header {
 	position: fixed;
@@ -27,23 +26,32 @@ header {
 	left: 0;
 	top: 0;
 	width: 100vw;
-	height: 100px;
+	height: auto;
+	min-height: 100px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
 	transition: top 0.5s ease-in-out; /* Додаємо плавний перехід для хедера */
+	overflow: hidden;
 	button {
 		background-color: #00000000;
 		border: none;
 		color: var(--text-color);
 		font-size: 24px;
+		z-index: 2;
 	}
 	a {
 		text-decoration: none;
 		color: var(--text-color);
+		margin: 0 20px 0 0;
 	}
 	img {
-		height: 100px;
+		position: absolute;
+		filter: blur(200px);
+		width: 100vw;
+		left: 0;
+		opacity: 0.15;
 	}
 	.btn {
 		z-index: 2000;
@@ -55,11 +63,6 @@ header {
 	.counter_flag {
 		display: flex;
 		align-items: center;
-		height: 100%;
-		position: relative;
-		right: 0px;
-		.counter_flag__div {
-		}
 		.btn_linia {
 			a {
 			}
@@ -94,6 +97,7 @@ header {
 		}
 	}
 }
+
 
 .block {
 	transition: opacity 0.5s ease-in-out;
