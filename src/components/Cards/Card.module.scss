@@ -94,6 +94,8 @@ html[data-theme='light'] {
 .main{
 	opacity: 0;
 	animation: hello 1.5s linear forwards;
+	overflow: hidden;
+	min-height: 100vh;
 }
 
 .flex_block {

@@ -5,6 +5,7 @@ import Hello from './components/Hello/Hello'
 import Country from './components/Сountry/Сountry'
 import useScrollToTop from './hooks/useScrollTop'
 import { Header } from './shader/Header/Header'
+import Footer from './shader/Footer/Footer'
 import './style/App.scss'
 import './style/btn_linia.scss'
 
@@ -90,6 +91,7 @@ export default function App() {
 			)}
 			{currentPage && <Country countryId={currentPage.id} />}
 			<button className='scrollTopButton'>top</button>
+			<Footer/>
 		</>
 	)
 }
