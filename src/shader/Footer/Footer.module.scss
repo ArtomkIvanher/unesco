@@ -17,8 +17,9 @@
 
 
 footer {
-	width: 100vw;
+	width: 78vw;
 	min-height: 100px;
+	padding: 0 11vw;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -36,6 +37,7 @@ footer {
 	}
 
 	.percent {
+		z-index: 2;
 		.percentage_bar {
 			min-width: 300px;
 			height: 5px;

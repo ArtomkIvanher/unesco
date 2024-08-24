@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react' // Corrected import
 import data from '../src/data/data'
+import { ReactComponent as UpArrowIcon } from './assets/ico/button_up.svg'
 import Cards from './components/Cards/Cards'
 import Hello from './components/Hello/Hello'
 import Country from './components/Сountry/Сountry'
 import useScrollToTop from './hooks/useScrollTop'
-import { Header } from './shader/Header/Header'
 import Footer from './shader/Footer/Footer'
-import './style/App.scss'
+import { Header } from './shader/Header/Header'
+import s from './style/App.module.scss'
 import './style/btn_linia.scss'
 
 export interface PageData {
@@ -90,8 +91,10 @@ export default function App() {
 				</>
 			)}
 			{currentPage && <Country countryId={currentPage.id} />}
-			<button className='scrollTopButton'>top</button>
-			<Footer/>
+			<button className={`${s.button_up} scrollTopButton`}>
+				<UpArrowIcon />
+			</button>
+			<Footer />
 		</>
 	)
 }

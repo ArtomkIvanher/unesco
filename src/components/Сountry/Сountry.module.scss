@@ -56,7 +56,6 @@
 	.year {
 		height: 0px;
 		text-align: center;
-		background-color: var(--background-color);
 		h2 {
 			display: inline;
 			border-radius: 10px;
@@ -112,10 +111,10 @@
 		}
 		.text_info {
 			h2 {
-				animation: texts 2s linear forwards;
+				animation: texts 1s linear forwards;
 			}
 			p {
-				animation: texts 2s linear forwards;
+				animation: texts 1s linear forwards;
 			}
 		}
 		.image_container > div {
@@ -125,10 +124,10 @@
 }
 
 .country_block {
-	background-color: var(--background-color);
+	background-color: var(--background-color-1);
 	.year {
 		h2 {
-			background-color: var(--background-color);
+			background-color: var(--background-color-1);
 		}
 	}
 
@@ -144,17 +143,17 @@
 			img {
 			}
 			div {
-				background-color: var(--background-color);
+				background-color: var(--background-color-1);
 			}
 		}
 	}
 }
 
 .country_block_reversed {
-	background-color: var(--background-color-1);
+	background-color: var(--background-color);
 	.year {
 		h2 {
-			background-color: var(--background-color-1);
+			background-color: var(--background-color);
 		}
 	}
 
@@ -171,7 +170,7 @@
 			img {
 			}
 			div {
-				background-color: var(--background-color-1);
+				background-color: var(--background-color);
 			}
 		}
 	}
@@ -200,7 +199,7 @@
 			}
 
 			.image_container {
-				width: 90vw;
+				width: 100vw;
 				height: 25vh;
 				max-height: 500px;
 				min-height: 250px;
@@ -219,13 +218,13 @@
 	}
 
 	.country_block .year h2 {
-				background-color: var(--background-color-1);
+				background-color: var(--background-color);
 			
 		
 	}
 
 	.country_block_reversed .year h2 {
-		background-color: var(--background-color);
+		background-color: var(--background-color-1);
 	}
 }
 
