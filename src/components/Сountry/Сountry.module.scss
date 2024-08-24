@@ -16,6 +16,16 @@
 	}
 }
 
+@keyframes year_smart {
+	from {
+		top: -30px;
+	}
+	to {
+		top: 20px;
+		color: var(--text-color);
+	}
+}
+
 @keyframes texts {
 	from {
 	}
@@ -173,12 +183,15 @@
 @media (max-width: 900px) {
 	.country_block,
 	.country_block_reversed {
+		overflow: hidden;
+
 		.layout {
 			flex-direction: column;
 			align-items: center;
 			gap: 20px;
 			.text_info {
 				width: 90vw;
+				margin-top: 30px;
 				h2 {
 					text-align: center;
 				}
@@ -190,26 +203,46 @@
 				width: 90vw;
 				height: 25vh;
 				max-height: 500px;
+				min-height: 250px;
 				img {
 				}
 			}
 		}
+
+		&.animate {
+			.year {
+				h2 {
+					animation: year_smart 0.5s linear forwards;
+				}
+			}
+		}
+	}
+
+	.country_block .year h2 {
+				background-color: var(--background-color-1);
+			
+		
+	}
+
+	.country_block_reversed .year h2 {
+		background-color: var(--background-color);
 	}
 }
 
-._1el1 {
-	&.country_block,
-	&.country_block_reversed {
-	  .year {
-		h2 {
-		  animation: none;
-		  top: 10px;
-		  color: var(--text-color);
+@media (min-width: 900px) {
+	._1el1 {
+		&.country_block,
+		&.country_block_reversed {
+			.year {
+				h2 {
+					animation: none;
+					top: 10px;
+					color: var(--text-color);
+				}
+			}
+			.text_info {
+				margin-top: 10px;
+			}
 		}
-	  }
-	  .text_info{
-		margin-top: 10px;
-	  }
 	}
-  }
-  
+}
