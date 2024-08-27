@@ -8,7 +8,7 @@ export default function Footer() {
 	return (
 		<footer ref={footerRef} className={footerInView ? s.animate : ''}>
 			<div className={s.link}>
-				<span>інформацію було взято тут</span>
+				<span>джерело інформації</span>
 				<div>
 					<a className='btn_linia' target="_blank" href='https://whc.unesco.org/'>
 						тик
@@ -30,19 +30,19 @@ export default function Footer() {
 				<div className={s.dots}>
 					<a className={`${s.TS} btn_linia`} target="_blank" href='https://uk.wikipedia.org/wiki/TypeScript'>
 						<div></div>
-						<span>TS</span>
+						<span>TS<span>50.4%</span></span>
 					</a>
 					<a className={`${s.SCSS} btn_linia`} target="_blank" href='https://uk.wikipedia.org/wiki/Sass'>
 						<div></div>
-						<span>SCSS</span>
+						<span>SCSS<span>41.3%</span></span>
 					</a>
 					<a className={`${s.HTML} btn_linia`} target="_blank" href='https://uk.wikipedia.org/wiki/HTML'>
 						<div></div>
-						<span>HTML</span>
+						<span>HTML<span>5.7%</span></span>
 					</a>
 					<a className={`${s.JS} btn_linia`} target="_blank" href='https://uk.wikipedia.org/wiki/JavaScript'>
 						<div></div>
-						<span>JS</span>
+						<span>JS<span>2.6%</span></span>
 					</a>
 				</div>
 			</div>
