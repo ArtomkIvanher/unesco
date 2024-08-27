@@ -10,13 +10,13 @@ export default function Footer() {
 			<div className={s.link}>
 				<span>інформацію було взято тут</span>
 				<div>
-					<a className='btn_linia' href='https://whc.unesco.org/'>
+					<a className='btn_linia' target="_blank" href='https://whc.unesco.org/'>
 						тик
 					</a>
-					<a className='btn_linia' href='https://whc.unesco.org/ru/list/'>
+					<a className='btn_linia' target="_blank" href='https://whc.unesco.org/ru/list/'>
 						тик
 					</a>
-					<a className='btn_linia' href='https://whc.unesco.org/en/list/'>
+					<a className='btn_linia' target="_blank" href='https://whc.unesco.org/en/list/'>
 						тик
 					</a>
 				</div>
@@ -28,19 +28,19 @@ export default function Footer() {
 					<div className={s.html}></div>
 				</div>
 				<div className={s.dots}>
-					<a className={`${s.TS} btn_linia`} href=''>
+					<a className={`${s.TS} btn_linia`} target="_blank" href='https://uk.wikipedia.org/wiki/TypeScript'>
 						<div></div>
 						<span>TS</span>
 					</a>
-					<a className={`${s.SCSS} btn_linia`} href=''>
+					<a className={`${s.SCSS} btn_linia`} target="_blank" href='https://uk.wikipedia.org/wiki/Sass'>
 						<div></div>
 						<span>SCSS</span>
 					</a>
-					<a className={`${s.HTML} btn_linia`} href=''>
+					<a className={`${s.HTML} btn_linia`} target="_blank" href='https://uk.wikipedia.org/wiki/HTML'>
 						<div></div>
 						<span>HTML</span>
 					</a>
-					<a className={`${s.JS} btn_linia`} href=''>
+					<a className={`${s.JS} btn_linia`} target="_blank" href='https://uk.wikipedia.org/wiki/JavaScript'>
 						<div></div>
 						<span>JS</span>
 					</a>

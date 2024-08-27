@@ -64,7 +64,7 @@ export const Header: React.FC<Props> = ({
       <div className={s.counter_flag}>
         {countryId && (
           <button className='btn_linia'>
-            <a href={`https://uk.wikipedia.org/wiki/${countryName}`}>
+            <a target="_blank" href={`https://uk.wikipedia.org/wiki/${countryName}`}>
               {countryName}
             </a>
           </button>
